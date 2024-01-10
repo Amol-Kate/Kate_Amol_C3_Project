@@ -63,4 +63,15 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+
+    // CODE FOR PART 3:
+    // ADDING A FEATURE FOR CALCULATING TOTAL ORDER COST
+    public int getCost(List<String> itemsSelected){
+        int cost = 0;
+        for (String itemName : itemsSelected) {
+            cost = cost + findItemByName(itemName).getItemCost();
+        }
+        return cost;
+    }
+
 }

@@ -17,4 +17,9 @@ public class Item {
                 + "\n"
                 ;
     }
+    // CREATING A NEW METHOD "getItemCost" FOR PART 3 SOLUTION:
+    public int getItemCost() {
+        return price;
+    }
+
 }

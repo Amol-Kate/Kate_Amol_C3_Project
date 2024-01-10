@@ -57,7 +57,7 @@ class RestaurantTest {
     @Test
     public void selected_items_from_the_menu_should_return_order_cost_greater_than_zero() {
         int cost;
-        List<String> itemsSelected = Arrays.asList("Sweet corn soup", "Vegetable lasagne");
+        List<String> itemsSelected = Arrays.asList("Sweet corn soup", "Vegetable lasagne"); //TWO ITEMS SELECTED FROM MENU
         cost = restaurant.getCost(itemsSelected);
         assertEquals(388, cost);
     }

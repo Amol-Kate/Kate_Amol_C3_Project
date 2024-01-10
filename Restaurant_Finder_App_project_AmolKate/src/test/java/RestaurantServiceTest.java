@@ -11,7 +11,9 @@ class RestaurantServiceTest {
     Restaurant restaurant;
 
     //ADDING "setUpRestaurantDetails()" METHOD BELOW:
+
     // ADD "@BeforeEach" ANNOTATION FOR REFACTORING THE CODE
+
     @BeforeEach
     public void setUpRestaurantDetails(){
         LocalTime openingTime = LocalTime.parse("10:30:00");
@@ -21,20 +23,19 @@ class RestaurantServiceTest {
         restaurant.addToMenu("Vegetable lasagne", 269);
     }
     //ADDED NEW CODES ABOVE
+
+
     //>>>>>>>>>>>>>>>>>>>>>>SEARCHING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
     public void searching_for_existing_restaurant_should_return_expected_restaurant_object() throws restaurantNotFoundException {
-        //setUpRestaurantDetails();
         String restaurantName = "Amelie's cafe";
         assertEquals(service.findRestaurantByName(restaurantName).getName(), restaurantName);
 
         //ADDED NEW CODES ABOVE - Solution
     }
 
-    //You may watch the video by Muthukumaran on how to write exceptions in Course 3: Testing and Version control: Optional content
     @Test
     public void searching_for_non_existing_restaurant_should_throw_exception() throws restaurantNotFoundException {
-        //setUpRestaurantDetails();
         String restaurantName;
         restaurantName = "Amol Kate's cafe";
         restaurantNotFoundException restaurantNotFound;
@@ -44,7 +45,9 @@ class RestaurantServiceTest {
     }
     //<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    //FOLLOWING CODES ARE REFACTORED USING @BeforeEach ANNOTATION:
+
+        //FOLLOWING CODES ARE REFACTORED USING @BeforeEach ANNOTATION:
+
     //>>>>>>>>>>>>>>>>>>>>>>ADMIN: ADDING & REMOVING RESTAURANTS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
     public void remove_restaurant_should_reduce_list_of_restaurants_size_by_1() throws restaurantNotFoundException {

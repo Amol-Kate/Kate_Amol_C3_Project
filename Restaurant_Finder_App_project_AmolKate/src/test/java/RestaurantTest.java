@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.time.LocalTime;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 // Importing Mockito library:
@@ -48,8 +51,30 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
-    // FOLLOWING CODES ARE REFACTORED USING @BeforeEach ANNOTATION:
+    // CODE FOR PART 3:
+    //>>>>>>>>>>>>>>>>>>>>>>>>>TOTAL ORDER COST<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    // FAILING TEST CASES FOR TOTAL ORDER COST FEATURE
+    @Test
+    public void selected_items_from_the_menu_should_return_order_cost_greater_than_zero() {
+        int cost;
+        List<String> itemsSelected = Arrays.asList("Sweet corn soup", "Vegetable lasagne");
+        cost = restaurant.getCost(itemsSelected);
+        assertEquals(388, cost);
+    }
+
+    @Test
+    public void items_not_selected_should_return_order_cost_equal_to_zero() {
+        int cost;
+        List<String> itemsSelected = Arrays.asList(); //No item is selected in this test case
+        cost = restaurant.getCost(itemsSelected);
+        assertEquals(0, cost);
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<<<TOTAL ORDER COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    // FOLLOWING CODES ARE REFACTORED USING @BeforeEach ANNOTATION:
+
     @Test
     public void adding_item_to_menu_should_increase_menu_size_by_1(){
         int initialMenuSize = restaurant.getMenu().size();

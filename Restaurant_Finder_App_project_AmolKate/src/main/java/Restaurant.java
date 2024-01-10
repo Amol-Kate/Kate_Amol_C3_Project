@@ -30,6 +30,7 @@ public class Restaurant {
         //ADDED NEW CODES ABOVE - Solution
     }
 
+
     private Item findItemByName(String itemName){
         for(Item item: menu) {
             if(item.getName().equals(itemName))
@@ -59,9 +60,7 @@ public class Restaurant {
                 +"Menu:"+"\n"+getMenu());
 
     }
-
     public String getName() {
         return name;
     }
-
 }

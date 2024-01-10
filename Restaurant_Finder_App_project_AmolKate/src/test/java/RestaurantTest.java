@@ -53,7 +53,7 @@ class RestaurantTest {
 
     // CODE FOR PART 3:
     //>>>>>>>>>>>>>>>>>>>>>>>>>TOTAL ORDER COST<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    // FAILING TEST CASES FOR TOTAL ORDER COST FEATURE
+    // TEST CASES FOR TOTAL ORDER COST FEATURE
     @Test
     public void selected_items_from_the_menu_should_return_order_cost_greater_than_zero() {
         int cost;
